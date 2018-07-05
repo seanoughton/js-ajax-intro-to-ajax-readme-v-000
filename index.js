@@ -38,7 +38,7 @@ function showCommits() {
   //turns this into a json object
   const commits = JSON.parse(this.responseText)
 // creates the html by going through the commits collection and pulling out the data needed and putting it into a li
-  const commitsList = `<ul>${commits.map(commit => '<li><strong>' + commit.author.login + '</strong> - ' + commit.commit.message + '</li>').join('')}</ul>`
+  const commitsList = `<ul>${commits.map(commit => '<li><strong>' + commit.url + '</strong> - ' + commit.commit.message + '</li>').join('')}</ul>`
   //gets the DOM element and puts the commitsList html into the div
   document.getElementById("commits").innerHTML = commitsList
 }
